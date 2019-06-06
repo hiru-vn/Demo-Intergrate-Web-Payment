@@ -6,6 +6,7 @@
     ShopProject.Areas.Shopper.Models.UserContext db=new ShopProject.Areas.Shopper.Models.UserContext();
     var cus = db.Customers.Find(Session["Phone"]);
 }
+
 <div class="container">
     <div class="spec ">
         <h3><a href="#" style="text-decoration:none;">Hoá đơn @Session["MHD"]</a></h3>
@@ -14,9 +15,6 @@
             <span><i></i></span>
             <b class="line"></b>
         </div>
-    </div>
-    <div class="alert alert-danger">
-        Hình thức thanh toán: chỉ nhận tiền mặt khi giao hàng.
     </div>
     <div class="row">
         <div class="col-lg-6">

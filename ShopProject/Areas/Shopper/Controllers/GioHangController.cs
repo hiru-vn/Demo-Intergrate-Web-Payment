@@ -27,11 +27,11 @@ namespace ShopProject.Areas.Shopper.Controllers
             List<CartItem> giohang = Session["giohang"] as List<CartItem>;  // Gán qua biến giohang dễ code
 
             // Kiểm tra xem sản phẩm khách đang chọn đã có trong giỏ hàng chưa
-
+            
             if (giohang.FirstOrDefault(m => m.SanPhamID == SanPhamID) == null) // ko co sp nay trong gio hang
             {
                 Models.Product sp = db.Products.Find(SanPhamID);  // tim sp theo sanPhamID
-
+                
                 CartItem newItem = new CartItem()
                 {
                     SanPhamID = SanPhamID,
@@ -55,6 +55,7 @@ namespace ShopProject.Areas.Shopper.Controllers
             return Redirect(Request.UrlReferrer.ToString());
         }
         //Sửa số lượng
+        
         public ActionResult SuaSoLuong(string SanPhamID, int soluongmoi)
         {
             // tìm carditem muon sua
@@ -64,7 +65,7 @@ namespace ShopProject.Areas.Shopper.Controllers
             {
                 if (soluongmoi < 1 || soluongmoi > 100)
                 {
-
+                    
                 }
                 else
                 {
